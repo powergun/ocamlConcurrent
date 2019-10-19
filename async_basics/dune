@@ -1,4 +1,23 @@
 (executable
- (name async)
+ (name read_blocked)
  (libraries core base stdio)
- (preprocess (pps ppx_jane)))
+ (preprocess (pps ppx_jane))
+ (modules Read_blocked))
+
+(executable
+ (name read_async)
+ (libraries core base stdio async)
+ (preprocess (pps ppx_jane))
+ (modules Read_async))
+
+(executable
+ (name read_bind)
+ (libraries core base stdio async)
+ (preprocess (pps ppx_jane))
+ (modules Read_bind))
+
+(executable
+ (name echo_server)
+ (libraries core base stdio async)
+ (preprocess (pps ppx_jane))
+ (modules Echo_server))
