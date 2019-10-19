@@ -1,0 +1,4 @@
+(executable
+ (name async)
+ (libraries core base stdio)
+ (preprocess (pps ppx_jane)))
